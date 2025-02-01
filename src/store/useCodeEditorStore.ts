@@ -18,7 +18,7 @@ const getInitialState = () => {
   const savedFontSize = localStorage.getItem("editor-font-size") || 16;
 
   return {
-    languge: savedLanguage,
+    language: savedLanguage,
     theme: savedTheme,
     fontSize: Number(savedFontSize),
   };
