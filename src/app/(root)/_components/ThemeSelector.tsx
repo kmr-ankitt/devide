@@ -64,7 +64,7 @@ export default function ThemeSelector() {
         <div className="w-4 h-4 text-gray-400 group-hover:text-gray-300 transition-colors">
           {THEME_ICONS[theme] || <Palette className="w-4 h-4" />}
         </div>
-        <span className="text-gray-300 min-w-[80px] text-left group-hover:text-white transition-colors">
+        <span className="text-gray-300 flex-1 text-left group-hover:text-white transition-colors">
           {currentTheme?.label}
         </span>
 
