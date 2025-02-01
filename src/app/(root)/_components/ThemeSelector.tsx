@@ -22,8 +22,8 @@ const THEME_ICONS: Record<string, React.ReactNode> = {
   "github-dark": <Github className="size-4" />,
   monokai: <Laptop className="size-4" />,
   "solarized-dark": <Cloud className="size-4" />,
-  "catppuccin" : <Palette className="size-4" />,
-  "gruvbox-dark" : <Blocks className="size-4" />,
+  catppuccin: <Palette className="size-4" />,
+  "gruvbox-dark": <Blocks className="size-4" />,
 };
 
 export default function ThemeSelector() {
@@ -61,8 +61,9 @@ export default function ThemeSelector() {
         {/* hover state bg decorator */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity" />
 
-        <Palette className="w-4 h-4 text-gray-400 group-hover:text-gray-300 transition-colors" />
-
+        <div className="w-4 h-4 text-gray-400 group-hover:text-gray-300 transition-colors">
+          {THEME_ICONS[theme] || <Palette className="w-4 h-4" />}
+        </div>
         <span className="text-gray-300 min-w-[80px] text-left group-hover:text-white transition-colors">
           {currentTheme?.label}
         </span>
