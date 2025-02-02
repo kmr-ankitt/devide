@@ -17,7 +17,7 @@ export default function LanguageSelector({
 
   const { language, setLanguage } = useCodeEditorStore();
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const currentLanguageObj = LANGUAGE_CONFIG[language];
+  const currentLanguageObj = LANGUAGE_CONFIG[language] || {};
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -61,13 +61,15 @@ export default function LanguageSelector({
         />
 
         <div className="size-6 rounded-md bg-gray-800/50 p-0.5 group-hover:scale-110 transition-transform">
-          <Image
-            src={currentLanguageObj.logoPath}
-            alt="programming language logo"
-            width={24}
-            height={24}
-            className="w-full h-full object-contain relative z-10"
-          />
+          {currentLanguageObj.logoPath && (
+            <Image
+              src={currentLanguageObj.logoPath}
+              alt="programming language logo"
+              width={24}
+              height={24}
+              className="w-full h-full object-contain relative z-10"
+            />
+          )}
         </div>
 
         <span className="text-gray-200 min-w-[80px] text-left group-hover:text-white transition-colors">
